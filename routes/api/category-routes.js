@@ -54,7 +54,7 @@ router.put('/:id', (req, res) => {
       id: req.params.id,
     },
   })
-    .then((category) => res.status(200).json(category))
+    .then((category) => res.status(200).json({message: "category updated"}))
     .catch((err) => res.status(400).json(err));
 });
 
@@ -73,7 +73,7 @@ router.put('/:id', (req, res) => {
         return;
       }
   
-      res.status(200).json(category);
+      res.status(200).json({message: "category deleted"});
     } catch (err) {
       res.status(500).json(err);
     }

@@ -59,7 +59,7 @@ router.put('/:id', (req, res) => {
       id: req.params.id,
     },
   })
-    .then((tag) => res.status(200).json({message: 'Tag updated'}))
+    .then((tag) => res.status(200).json({message: "tag updated"}))
     .catch((err) => res.status(404).json(err));
 });
 
@@ -78,7 +78,7 @@ router.put('/:id', (req, res) => {
         return;
       }
   
-      res.status(200).json({message: 'Tag deleted'});
+      res.status(200).json({message: "tag deleted"});
     } catch (err) {
       res.status(500).json(err);
     }

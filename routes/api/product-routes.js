@@ -60,7 +60,7 @@ router.post('/', (req, res) => {
           };
         });
         return ProductTag.bulkCreate(productTagIdArr);
-      }
+            }
       // if no product tags, just respond
       res.status(200).json(product);
     })
@@ -117,7 +117,7 @@ router.put('/:id', (req, res) => {
   // delete one product by its `id` value
   router.delete('/:id', async (req, res) => {
     try {
-      const product = await Location.destroy({
+      const product = await Product.destroy({
         where: {
           id: req.params.id
         }
@@ -128,7 +128,7 @@ router.put('/:id', (req, res) => {
         return;
       }
   
-      res.status(200).json({message: 'product deleted'});
+      res.status(200).json({message: "product deleted"});
     } catch (err) {
       res.status(500).json(err);
     }
